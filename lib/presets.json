@@ -1,0 +1,13 @@
+{
+    "default": {
+        "folders": ["/"],
+        "filename": "*.js"
+    },
+    "bem": {
+        "folders": [
+            "/",
+            "/_[^_"
+        ],
+        "filename": "+([^.]).js"
+    }
+}
