@@ -9,7 +9,7 @@ const PRESETS = require('../lib/presets.json');
 commander
     .version(require('../package').version)
     .usage('[options] <patterns ...>')
-    .description('Generates README.md')
+    .description('Generates readme.md')
     .option('-p --preset [preset]', 'Filenames and paths preset', String)
     .option('-d --dry-run', 'Don\'t create files')
     .option('-c --clear-empty', 'Delete empty files')

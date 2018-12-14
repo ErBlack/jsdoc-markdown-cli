@@ -5,7 +5,7 @@ jsdoc-markdown-cli --help
 
 Usage: index [options] <patterns ...>
 
-Generates README.md
+Generates readme.md
 
 Options:
   -V, --version         output the version number
@@ -17,4 +17,4 @@ Options:
 
 ## License
 
-© 2013 YANDEX LLC. The code is released under the [Mozilla Public License 2.0](LICENSE.txt).
+© 2018 YANDEX LLC. The code is released under the [Mozilla Public License 2.0](LICENSE.txt).
