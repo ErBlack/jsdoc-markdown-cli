@@ -23,7 +23,7 @@
   "dependencies": {
     "commander": "^2.20.0",
     "glob": "^7.1.4",
-    "jsdoc-to-markdown": "^4.0.1"
+    "jsdoc-to-markdown": "^5.0.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
