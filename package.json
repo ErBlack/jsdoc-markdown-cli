@@ -1,6 +1,7 @@
 {
   "name": "jsdoc-markdown-cli",
   "version": "2.0.0",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git://github.com/ErBlack/jsdoc-markdown-cli.git"
@@ -33,7 +34,8 @@
     "nano-staged": "^0.9.0"
   },
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "postversion": "git push && git push --tags"
   },
   "nano-staged": {
     "*.js": [

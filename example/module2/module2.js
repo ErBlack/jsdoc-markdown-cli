@@ -5,7 +5,7 @@
  * @version 1.0.0
  * @example
  * ```js
- * const module2 = require('./module2');
+ * import module2 from './module2.js';
  * module2();
  * ```
  * @returns {void}

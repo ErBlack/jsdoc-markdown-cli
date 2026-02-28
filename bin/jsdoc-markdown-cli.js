@@ -1,25 +1,30 @@
 #!/usr/bin/env node
 
-const { Command } = require('commander');
+import { Command } from 'commander';
+import { glob } from 'glob';
+import { builder } from '../lib/builder.js';
+import { dirname } from 'path';
+import { readFileSync } from 'fs';
+
+const packageJson = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+
 const program = new Command();
-const glob = require('glob');
-const builder = require('../lib/builder');
-const { dirname } = require('path');
 
 program
-    .version(require('../package').version)
+    .version(packageJson.version)
     .usage('example/**/*.js')
-    .description('Generates readme.md')
+    .description('Generates README.md')
     .option('-d --dry-run', 'Don\'t create files')
     .option('-c --clear-empty', 'Delete empty files')
     .argument('<patterns...>', 'Glob patterns to match files')
     .parse(process.argv);
 
 const {
-    args,
     dryRun,
     clearEmpty,
-} = program;
+} = program.opts();
+
+const args = program.args;
 
 
 const targets = args.reduce((folders, pattern) => {
@@ -41,7 +46,7 @@ const targets = args.reduce((folders, pattern) => {
     return folders;
 }, {});
 
-builder(Object.values(targets), {
+await builder(Object.values(targets), {
     clearEmpty,
     dryRun
 });
