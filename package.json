@@ -6,9 +6,9 @@
     "url": "git://github.com/ErBlack/jsdoc-markdown-cli.git"
   },
   "description": "Cli tool to generate markdown readme.md from jsdocs of module",
-  "main": "./bin/index.js",
+  "main": "./bin/jsdoc-markdown-cli.js",
   "bin": {
-    "jsdoc-markdown-cli": "./bin/index.js"
+    "jsdoc-markdown-cli": "./bin/jsdoc-markdown-cli.js"
   },
   "keywords": [
     "jsdoc",
@@ -18,34 +18,26 @@
     "bin",
     "lib"
   ],
-  "author": "ertema@yandex-team.ru",
+  "author": "dev@erblack.me",
   "license": "MPL-2.0",
   "dependencies": {
-    "commander": "^3.0.1",
-    "glob": "^7.1.4",
-    "jsdoc-to-markdown": "^5.0.1"
+    "commander": "^14.0.3",
+    "glob": "^13.0.6",
+    "jsdoc-to-markdown": "^9.1.3"
   },
   "devDependencies": {
-    "eslint": "^6.4.0",
-    "husky": "^3.0.5",
-    "lint-staged": "^9.2.5"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.2",
+    "globals": "^17.3.0",
+    "husky": "^9.1.7",
+    "nano-staged": "^0.9.0"
   },
-  "eslintConfig": {
-    "extends": "eslint:recommended",
-    "env": {
-      "es6": true,
-      "node": true
-    }
+  "scripts": {
+    "prepare": "husky"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
+  "nano-staged": {
     "*.js": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   }
 }
